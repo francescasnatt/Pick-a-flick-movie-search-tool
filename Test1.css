@@ -1,0 +1,50 @@
+.container-fluid {
+  border: 5px;
+  padding: 15px;
+  margin-top: 5px;
+  margin-right: 55px;
+  margin-bottom: 35px;
+  margin-left: 65px;
+  background-color: aqua;
+}
+
+#sixPosters {
+  margin-top: 30px;
+  margin-right: 45px;
+  margin-bottom: 40px;
+  margin-left: 60px;
+}
+
+.card-group {
+  margin-right: -10px;
+  margin-left: 70px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.card#fRight {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+.card#sRight {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+#hero-bg {
+  background-image: url(/IMAGES/erik-mclean-Np_8Kt_QHZU-unsplash_DullChucky.jpg), url(/IMAGES/h-heyerlein-BsWgMBfb208-unsplash_Avartar.jpg);
+}
+
+#sbam {
+  width: 100px;
+  float: left;
+}
+
+#bottomOne {
+  text-align: center;
+}/*# sourceMappingURL=Test1.css.map */
