@@ -1,6 +1,52 @@
-.container{
-    margin: 0 auto;
-
+.page-wrap{
+    max-width: 1000px;
+    margin: auto;
 }
 
-.card{}
+.container{
+    margin: 0 auto;
+}
+
+.row{
+    display: flex;
+    overflow-x: auto;
+}
+
+.card{
+    max-width: 180px;
+}
+
+.navbar{
+    background-color: #032541;
+}
+
+.navbar-light .navbar-brand{
+    color: white;
+}
+
+.jumbotron-fluid{
+    background: url("../images/avengerscroppedbw.jpg") no-repeat center center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-tagline{
+    position: relative;
+    color: white;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.scrollable{
+    margin: 0 auto;
+}
+
+.color-overlay{
+    height: 100%;
+    width: 100%;
+    background: #0183BA;
+    opacity: .7;
+    position: absolute;
+}
