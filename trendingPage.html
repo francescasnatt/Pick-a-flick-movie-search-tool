@@ -20,12 +20,27 @@
         <div class="container">
           <h1 class="hero-tagline display-4">Hundreds of movies to discover.</h1>
           <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
-          <form>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search for a movie and get exploring" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-                </div>
+          <form class="form">
+            <div class="search-bar input-group" style="width: 50%; margin: 50px auto;">
+                <div class="input-group-prepend">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Popular
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <button class="dropdown-item" type="button">Trending</button>
+                          <button class="dropdown-item" type="button">Popular</button>
+                          <button class="dropdown-item" type="button">Top rated</button>
+                          <button class="dropdown-item" type="button">Upcoming</button>
+                        </div>
+                      </div>
+                  </div>
+              <input id="search-input" type="text" class="form-control" placeholder="Search for a movie and get exploring">
+              <div class="input-group-append">
+                <button id="movie-search" class="btn btn-secondary" type="button">
+                  <i class="fa fa-search">Search</i>
+                </button>
+              </div>
             </div>
           </form>
         </div>
@@ -33,17 +48,18 @@
 
       
 <!-- trending header -->
-<h2 class="mt-5 mb-5 ml-5">Trending Movies</h2>
+<h3 id="trending-header" class="mt-5 mb-3 ml-5">Trending Movies</h3>
 
-<!-- test -->
-<div class="container-fluid">
-    <div class="row flex-row flex-nowrap">
+<!-- trending movie cards -->
+<div id="trending-movies-container" class="container-fluid">
+    <div id="trending-movies-row" class="row flex-row flex-nowrap">
         <div class="col-3">
             <div class="card m-2" style="width: 16rem;">
                 <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-text">Movie title</h6>
-                  <p class="card-text">Release date</p>
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
                 </div>
             </div>
         </div>
@@ -51,8 +67,9 @@
             <div class="card m-2" style="width: 16rem;">
                 <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-text">Movie title</h6>
-                  <p class="card-text">Release date</p>
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
                 </div>
             </div>
         </div>
@@ -60,8 +77,9 @@
             <div class="card m-2" style="width: 16rem;">
                 <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-text">Movie title</h6>
-                  <p class="card-text">Release date</p>
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
                 </div>
             </div>
         </div>
@@ -69,8 +87,9 @@
             <div class="card m-2" style="width: 16rem;">
                 <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-text">Movie title</h6>
-                  <p class="card-text">Release date</p>
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
                 </div>
             </div>
         </div>
@@ -78,8 +97,9 @@
             <div class="card m-2" style="width: 16rem;">
                 <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-text">Movie title</h6>
-                  <p class="card-text">Release date</p>
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
                 </div>
             </div>
         </div>
@@ -87,8 +107,9 @@
             <div class="card m-2" style="width: 16rem;">
                 <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-text">Movie title</h6>
-                  <p class="card-text">Release date</p>
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
                 </div>
             </div>
         </div>
@@ -96,8 +117,9 @@
             <div class="card m-2" style="width: 16rem;">
                 <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-text">Movie title</h6>
-                  <p class="card-text">Release date</p>
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
                 </div>
             </div>
         </div>
@@ -105,19 +127,147 @@
             <div class="card m-2" style="width: 16rem;">
                 <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-text">Movie title</h6>
-                  <p class="card-text">Release date</p>
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
                 </div>
             </div>
         </div>
-        ...
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<!-- recent releases header -->
+<h3 id="recent-releases-header" class="mt-5 mb-3 ml-5">Recent Releases</h3>
+
+<!-- recent releases movie cards -->
+<div id="recent-releases-container" class="container-fluid">
+    <div id="recent-releases-row" class="row flex-row flex-nowrap">
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card m-2" style="width: 16rem;">
+                <img src="assets/images/joker.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="movie-title card-text">Movie title</h6>
+                  <p class="release-date card-text">Release date</p>
+                  <p class="rating card-text">Rating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- footer -->
-<nav class="navbar navbar-light">
-    <p class="navbar-brand">Made with love</p>
+<nav class="footer navbar navbar-light">
+    <p class="footer-note">Made by Team SBAM 2023</p>
 </nav>
 
 </div>

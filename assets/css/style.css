@@ -1,3 +1,7 @@
+body{
+    background-color: #374044;
+}
+
 .page-wrap{
     max-width: 1000px;
     margin: auto;
@@ -10,18 +14,26 @@
 .row{
     display: flex;
     overflow-x: auto;
+
 }
 
 .card{
     max-width: 180px;
+    border: none;
+    background-color: #374044;
+    line-height: 15px;
 }
 
 .navbar{
     background-color: #032541;
 }
 
-.navbar-light .navbar-brand{
-    color: white;
+.navbar-light .navbar-brand, #trending-header, #recent-releases-header, .movie-title{
+    color: #dbdbdb;
+}
+
+.release-date, .rating{
+    color: #5f696d;
 }
 
 .jumbotron-fluid{
@@ -33,6 +45,7 @@
 }
 
 .hero-tagline{
+    margin: 0 auto;
     position: relative;
     color: white;
     font-weight: 400;
@@ -49,4 +62,41 @@
     background: #0183BA;
     opacity: .7;
     position: absolute;
+}
+
+.footer{
+    /* margin-top: 50px; */
+    height: 150px;
+}
+
+.footer-note{
+    color: #dbdbdb;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+/* scroll bar test */
+.row::-webkit-scrollbar {
+    height: 6px;
+    background-color: #374044;
+}
+
+
+.row::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 6px rgba(104, 140, 240, 0.3); */
+  }
+
+.row::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #525b5f;
+}
+
+#movie-search{
+        background-image: linear-gradient(to right, #1BD1B0 , #0183BA);
+        border: none;
+        border-radius: 0px 20px 20px 0px;
+}
+
+#trending-movies-container{
+    margin-bottom: 50px;
 }
