@@ -13,3 +13,81 @@ function movieArrayObj(searchTerm, date, results) {
 const APIkeyTMDB = '4ea43f6025357b9622135c80346e095e';
 const APIkeyOMDB = '29841051';
 
+
+function movieSearch(movie){
+
+    let APIurl;
+    let searchTerm = movie;
+
+    //switch statement to handle to drop down options
+
+    switch (movie) {
+        case 'Trending':
+            APIurl = `https://api.themoviedb.org/3/trending/movie/day?api_key=${APIkeyTMDB}&language=en-US&page=1`;
+            break;
+        case 'Popular':
+            APIurl = `https://api.themoviedb.org/3/movie/popular?api_key=${APIkeyTMDB}&language=en-US&page=1`;
+            break;
+        case 'Top rated':
+            APIurl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${APIkeyTMDB}&language=en-US&page=1`;
+            break;
+        case 'Upcoming':
+            APIurl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${APIkeyTMDB}&language=en-US&page=1`;
+            break;
+        default:
+            APIurl = `https://api.themoviedb.org/3/search/movie?query=${movie}&api_key=${APIkeyTMDB}&language=en-US&page=1&include_adult=true`;
+            break;
+    };
+
+    //ajax call to retrive movie data
+
+    $.ajax({
+
+        url: APIurl,
+        method: "GET"
+
+    }).then(function(response){
+
+        //push response into a new object
+
+        let reply = response.results;
+
+        if (reply.length != 0) {
+
+        let currentDate = moment().format("YYYYMMDD");
+        let resultsObj = new movieArrayObj(searchTerm, currentDate, reply);
+
+        return resultsObj;
+
+    } else {
+
+        throw new Error('Unable to find movie. Please try again');
+    }
+
+    })
+    .then(function(data){
+
+        //render data
+
+        let arr = data;
+
+        dynamicHTML(arr);
+
+    return arr;
+
+}).then(function(arr) {
+
+    //update local storage
+
+    updateLocalMovieSearch(arr);
+
+}).catch(function(error) {
+
+    //give error alert if film not found
+
+    alert(error.message);
+    
+});
+
+};
+
