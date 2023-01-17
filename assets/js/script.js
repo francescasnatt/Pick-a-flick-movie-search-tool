@@ -71,7 +71,7 @@ function movieSearch(movie){
 
         let arr = data;
 
-        dynamicHTML(arr);
+        // dynamicHTML(arr);   ############################# UPDATE when function ready
 
     return arr;
 
@@ -88,6 +88,37 @@ function movieSearch(movie){
     alert(error.message);
     
 });
+
+};
+
+
+// create a function to update local storage with movie object
+
+function updateLocalMovieSearch(object){
+
+    //get local storage
+    let storage = localStorage.getItem("movieSearchHistory");
+    let storageArr = JSON.parse(storage);
+
+    //create an empty array and push instance of storage object
+    let array = [];
+    array.push(object);
+
+    //if storage array already exists, replace existing entry - else push history into new array
+    if (storageArr != null) {
+
+        storageArr.forEach(arr => {
+   
+            if (arr.searchTerm == object.searchTerm) {
+                return;
+            } else {
+                array.push(arr)
+            }
+        })
+    
+        }
+
+    localStorage.setItem("movieSearchHistory", JSON.stringify(array));
 
 };
 
