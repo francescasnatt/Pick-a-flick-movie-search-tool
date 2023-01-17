@@ -122,3 +122,31 @@ function updateLocalMovieSearch(object){
 
 };
 
+
+
+ // create an event listener to respond to dropdown button pressed
+
+ $(".dropdown-item").on('click',function(event){
+
+    event.preventDefault();
+
+    let reply = event.target.textContent;
+
+    switch (reply) {
+        case 'Trending':
+            movieSearch('Trending');
+            break;
+        case 'Popular':
+            movieSearch('Popular');
+            break;
+        case 'Top rated':
+            movieSearch('Top rated');
+            break;
+        case 'Upcoming':
+            movieSearch('Upcoming');
+            break;
+        default:
+            return;
+    }
+    
+});
