@@ -45,11 +45,10 @@ body{
 }
 
 .hero-tagline{
-    margin: 0 auto;
+    text-align: center;
     position: relative;
     color: white;
     font-weight: 400;
-    z-index: 1;
 }
 
 .scrollable{
