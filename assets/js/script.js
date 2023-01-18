@@ -209,6 +209,26 @@ function checkLocalStorage(movie){
 }
 
 
+// create a function to render movie if record found in local storage
+
+function renderStorage(movie) {
+
+
+    let storage = localStorage.getItem("movieSearchHistory");
+    let storageArr = JSON.parse(storage);
+
+    storageArr.forEach(arr =>{
+
+    if (arr.searchTerm == movie) {
+
+        dynamicHTML(arr);
+
+    }
+
+})
+
+}
+
 
  // create an event listener to respond to dropdown button pressed
 
