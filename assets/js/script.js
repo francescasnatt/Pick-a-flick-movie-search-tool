@@ -175,11 +175,11 @@ function dynamicHTML(arr){
     rating.addClass('rating card-text');
     cardBody.append(rating);
 
-    // let btn = $("<a>");
-    // btn.addClass("btn btn-primary btn-more");
-    // btn.attr('data-id',arr.id)
-    // btn.text('See More');
-    // cardBody.append(btn);
+    let btn = $("<a>");
+    btn.addClass("btn btn-primary btn-more");
+    btn.attr('data-id',arr.id)
+    btn.text('See More');
+    cardBody.append(btn);
     
             }
 
