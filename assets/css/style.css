@@ -36,12 +36,18 @@ body{
     color: #5f696d;
 }
 
-.jumbotron-fluid{
+
+#hero {
     background: url("../images/avengerscroppedbw.jpg") no-repeat center center;
+}
+
+.jumbotron-fluid {
+
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .hero-tagline{
@@ -81,9 +87,9 @@ body{
 }
 
 
-.row::-webkit-scrollbar-track {
+/* .row::-webkit-scrollbar-track {
     /* box-shadow: inset 0 0 6px rgba(104, 140, 240, 0.3); */
-  }
+  /* } */ */
 
 .row::-webkit-scrollbar-thumb {
     border-radius: 10px;
