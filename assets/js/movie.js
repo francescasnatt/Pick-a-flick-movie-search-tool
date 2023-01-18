@@ -138,6 +138,95 @@ function checkLocalDetail(id){
 
     }
 
-}
+};
+
+
+
+// create a function to call film APIs if record not in local storage
+
+function filmDetail(id){
+
+    let filmId = id;
+
+    const detailURL = `https://api.themoviedb.org/3/movie/${filmId}?api_key=${APIkeyTMDB}&append_to_response=videos,images`;
+
+    const creditsURL = `https://api.themoviedb.org/3/movie/${filmId}/credits?api_key=${APIkeyTMDB}&language=en-US`
+
+    const reviewURL = `https://api.themoviedb.org/3/movie/${filmId}/reviews?api_key=${APIkeyTMDB}`;
+
+    let detailObject = new Object();
+
+    detailObject['id'] = filmId;
+
+    $.ajax({
+
+        url: detailURL,
+        method: "GET"
+
+    }).then(function(response){
+
+        let data = response;
+        
+        detailObject['detail'] = data;
+
+        return data;
+
+    }).then(function(data){
+
+        let reply = data;
+
+        let omdbId = data.imdb_id;
+        const omdbURL = `https://www.omdbapi.com/?i=${omdbId}&apikey=${APIkeyOMDB}`;
+
+        $.ajax({
+
+            url: omdbURL,
+            method: "GET"
+
+        }).then(function(response){
+
+            detailObject['imdb'] = response;
+            return reply
+
+        }).then(function(reply){
+
+            let data = reply;
+       
+              $.ajax({
+       
+               url: creditsURL,
+               method: "GET"
+       
+              }).then(function(response){
+       
+                   detailObject['credits'] = response;
+       
+              })
+       
+              return data;
+       
+           }).then(function(data){
+       
+               $.ajax({
+       
+                   url: reviewURL,
+                   method: "GET"
+       
+               }).then(function(response){
+       
+                   let output = response;
+                   detailObject['reviews'] = response;
+                    
+                   renderDetailHTML(detailObject);
+                   
+                   updateLocalMovieDetail(detailObject);
+       
+               })
+       
+           })
+
+        })
+
+};
 
 
