@@ -187,6 +187,26 @@ function dynamicHTML(arr){
 
     }
 
+// create a function to check local storage. render from storage if record found
+
+function checkLocalStorage(movie){
+
+    let storage = localStorage.getItem("movieSearchHistory");
+    let storageArr = JSON.parse(storage);
+
+    let date = moment().format('YYYYMMDD');
+
+    if (storageArr.some(arr => arr['searchTerm'] == movie && arr['date'] == date)) {
+
+        renderStorage(movie);
+
+    } else {
+
+        movieSearch(movie)        
+
+    }
+
+}
 
 
 
