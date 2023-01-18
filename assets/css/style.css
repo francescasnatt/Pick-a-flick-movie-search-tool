@@ -99,3 +99,38 @@ body{
 #trending-movies-container{
     margin-bottom: 50px;
 }
+
+/* EXTRA STYLING FOR MOVIE PAGE ONLY */
+.movie-poster
+{
+    z-index: 1;
+    max-height: 300px;
+    margin-left: 80px;
+}
+
+.container{
+    z-index: 1;
+    color: white;
+}
+
+.color-overlay-black{
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    opacity: .8;
+    position: absolute;
+}
+
+#cast-header{
+    color: #dbdbdb;
+}
+
+button{
+    outline: none;
+    border: none;
+    background-color: #374044;
+}
+
+button :after{
+border: none;
+}
