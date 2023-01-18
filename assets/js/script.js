@@ -71,7 +71,7 @@ function movieSearch(movie){
 
         let arr = data;
 
-        // dynamicHTML(arr);   ############################# UPDATE when function ready
+        dynamicHTML(arr);
 
     return arr;
 
@@ -123,10 +123,131 @@ function updateLocalMovieSearch(object){
 };
 
 
+function dynamicHTML(arr){
 
+    let title = $("#trending-header");
+    title.empty();
+    title.text(arr.searchTerm);
+
+    let output = $("#trending-movies-container");
+    output.empty();
+    let cardDeckDiv = $("<div>");
+    cardDeckDiv.addClass('row flex-row flex-nowrap');
+    cardDeckDiv.attr('id','trending-movies-row');
+
+    arr.results.forEach((arr, index) => {
+
+    if (index < 8) {
+
+    let cardDiv = $("<div>");
+    cardDiv.addClass('col-3');
+
+    output.append(cardDeckDiv);
+    cardDeckDiv.append(cardDiv);
+
+    let cardDiv1 =$("<div>");
+    cardDiv1.addClass('card m-2');
+    cardDiv1.attr('style','width: 16rem;');
+    cardDiv.append(cardDiv1);
+
+    let imageURL = `https://image.tmdb.org/t/p/w500${arr.poster_path}`;
+    let image = $("<img>");
+    image.attr('src', imageURL);
+    image.addClass('card-img-top');
+    cardDiv1.append(image);
+
+    let cardBody = $("<div>");
+    cardBody.addClass("card-body");
+    cardDiv1.append(cardBody);
+
+    let title = $("<h5>");
+    title.addClass("movie-title card-text");
+    title.text(arr.title);
+    cardBody.append(title);
+
+    let release = $("<p>");
+    release.text(arr.release_date);
+    release.addClass('release-date card-text');
+    cardBody.append(release);
+
+    let rating = $("<p>");
+    rating.text(arr.vote_average);
+    rating.addClass('rating card-text');
+    cardBody.append(rating);
+
+    // let btn = $("<a>");
+    // btn.addClass("btn btn-primary btn-more");
+    // btn.attr('data-id',arr.id)
+    // btn.text('See More');
+    // cardBody.append(btn);
+    
+            }
+
+        }) 
+
+    }
+
+// create a function to check local storage. render from storage if record found
+
+function checkLocalStorage(movie){
+
+    let storage = localStorage.getItem("movieSearchHistory");
+    let storageArr = JSON.parse(storage);
+
+    let date = moment().format('YYYYMMDD');
+
+    if (storageArr.some(arr => arr['searchTerm'] == movie && arr['date'] == date)) {
+
+        renderStorage(movie);
+
+    } else {
+
+        movieSearch(movie)        
+
+    }
+
+}
+
+
+// create a function to render movie if record found in local storage
+
+function renderStorage(movie) {
+
+
+    let storage = localStorage.getItem("movieSearchHistory");
+    let storageArr = JSON.parse(storage);
+
+    storageArr.forEach(arr =>{
+
+    if (arr.searchTerm == movie) {
+
+        dynamicHTML(arr);
+
+    }
+
+})
+
+}
+
+
+// on document load function
+
+$(document).ready(function(){
+
+
+    //immediately invoked function to update Trending data and set up initial page rendering
+    
+    /* IIFE */
+    (function initialise() {
+    
+        movieSearch('Trending');
+    
+    })();
+    
+    
  // create an event listener to respond to dropdown button pressed
 
- $(".dropdown-item").on('click',function(event){
+$(".dropdown-item").on('click',function(event){
 
     event.preventDefault();
 
@@ -150,3 +271,20 @@ function updateLocalMovieSearch(object){
     }
     
 });
+
+// create an event listener for search button
+
+$("#movie-search").on('click',function(event){
+
+    event.preventDefault();
+
+    let input = $("#search-input");
+    
+    checkLocalStorage(input[0].value)
+
+    input.val('');
+
+});   
+
+    
+}); 
