@@ -37,7 +37,7 @@ body{
 }
 
 .jumbotron-fluid{
-    background: url("../images/avengerscroppedbw.jpg") no-repeat center center;
+    /* background: url("../images/avengerscroppedbw.jpg") no-repeat center center; */
     position: relative;
     display: flex;
     justify-content: center;
