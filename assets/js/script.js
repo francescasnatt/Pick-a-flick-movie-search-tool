@@ -286,5 +286,18 @@ $("#movie-search").on('click',function(event){
 
 });   
 
+// create an event listener for film detail
+
+$(document).on('click','.btn-more',function(event){
+
+    event.preventDefault();
+
+    localStorage.setItem('filmDetailCurrent',event.target.dataset.id);
+    
+    $(location).attr('href','/moviePage.html');
+    
+
+    });
+
     
 }); 
