@@ -230,3 +230,37 @@ function filmDetail(id){
 };
 
 
+// create a function to update local storage with new movie detail
+
+function updateLocalMovieDetail(object){
+
+    //get local storage
+    let storage = localStorage.getItem("movieSearchDetail");
+    let storageArr = JSON.parse(storage);
+
+    //create an empty array and push instance of storage object
+    let array = [];
+    array.push(object);
+
+    //if storage array already exists, replace existing entry - else push history into new array
+    if (storageArr != null) {
+
+        storageArr.forEach(arr => {
+   
+            if (arr.id == object.id) {
+                return;
+            } else {
+                array.push(arr)
+            }
+        })
+    
+        }
+
+    localStorage.setItem("movieSearchDetail", JSON.stringify(array));
+
+};
+
+// invoke function on page load
+
+checkLocalDetail(localStorage.getItem('filmDetailCurrent'));
+
