@@ -256,3 +256,18 @@ function renderStorage(movie) {
     }
     
 });
+
+// create an event listener for search button
+
+$("#movie-search").on('click',function(event){
+
+    event.preventDefault();
+
+    let input = $("#search-input");
+    
+    checkLocalStorage(input[0].value)
+    // movieSearch(input[0].value);
+
+    input.val('');
+
+});  
