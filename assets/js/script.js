@@ -230,9 +230,24 @@ function renderStorage(movie) {
 }
 
 
+// on document load function
+
+$(document).ready(function(){
+
+
+    //immediately invoked function to update Trending data and set up initial page rendering
+    
+    /* IIFE */
+    (function initialise() {
+    
+        movieSearch('Trending');
+    
+    })();
+    
+    
  // create an event listener to respond to dropdown button pressed
 
- $(".dropdown-item").on('click',function(event){
+$(".dropdown-item").on('click',function(event){
 
     event.preventDefault();
 
@@ -266,8 +281,10 @@ $("#movie-search").on('click',function(event){
     let input = $("#search-input");
     
     checkLocalStorage(input[0].value)
-    // movieSearch(input[0].value);
 
     input.val('');
 
-});  
+});   
+
+    
+}); 
