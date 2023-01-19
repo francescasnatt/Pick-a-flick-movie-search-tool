@@ -2,9 +2,9 @@
 
 ## USER STORY
 
-As an avid film buff I would like to find my favourite films.
-When I click on the search button 
-I am presented with a row of films that match my input
+> As an avid film buff I would like to find my favourite films.\
+> When I click on the search button\
+> I am presented with a row of films that match my input
 
 ## ACCEPTANCE CRITERIA
 
