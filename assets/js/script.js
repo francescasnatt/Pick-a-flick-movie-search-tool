@@ -294,7 +294,7 @@ $(document).on('click','.btn-more',function(event){
 
     localStorage.setItem('filmDetailCurrent',event.target.dataset.id);
     
-    $(location).attr('href','/moviePage.html');
+    $(location).attr('href','./moviePage.html');
     
 
     });
