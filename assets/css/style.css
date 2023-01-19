@@ -1,5 +1,6 @@
 body{
     background-color: #374044;
+    /* background-image: linear-gradient(to right, #374044 , #51585c); */
 }
 
 .page-wrap{
@@ -123,9 +124,16 @@ body{
     height: 100%;
     width: 100%;
     background: #000000;
-    opacity: .8;
     position: absolute;
 }
+
+/* .overlay{
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    opacity: 0;
+    position: absolute;
+} */
 
 #cast-header{
     color: #dbdbdb;
@@ -139,4 +147,19 @@ button{
 
 button :after{
 border: none;
+}
+
+#return-button{
+    color: #5f696d;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#logo{
+    max-height: 100px;
+    margin: 0 auto;
+}
+
+#pickaflick-logo:hover{
+    color: #dbdbdb;
 }

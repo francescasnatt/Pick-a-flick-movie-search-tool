@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Pickaflick!</title>
@@ -12,17 +13,18 @@
     <div class="page-wrap">
 <!-- navbar -->
     <nav class="navbar navbar-light">
-        <span class="navbar-brand mb-0 h1">Pick-a-Flick</span>
+        <span id="pickaflick-logo" class="navbar-brand mb-0 h1">Pick-a-Flick</span>
       </nav>
 
 <!-- back button -->
 <!-- <button type="button" class="btn btn-light m-3">Back</button> -->
 <a href="./index.html">
-<button type="button" class="btn btn-link"><-- Return</button>
+<button id="return-button" type="button" class="btn btn-link"><i class="fa-solid fa-arrow-left-long"></i> Return</button>
 </a>
 
 <!-- jumbotron -->
 <div class="jumbotron jumbotron-fluid">
+    <div class="overlay"></div>
     <div class="color-overlay-black"></div>
     <div id="movie-detail-header" class="container">
         <div id="movie-detail-header" class="d-md-flex align-items-center">
@@ -50,8 +52,13 @@
 
 <!-- footer -->
 <nav class="footer navbar navbar-light">
-    <p class="footer-note">Made by Team SBAM 2023</p>
-</nav>
+    <div>
+      <img id="logo" src="assets\images\logo.png" alt="logo">
+    </div>
+    <div>
+      <p class="footer-note">This application was created using APIs from <a href="https://www.themoviedb.org/documentation/api">TMDB</a> and <a href="https://www.themoviedb.org/documentation/api">IMDb</a>.</p>
+    </div>
+  </nav>
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
