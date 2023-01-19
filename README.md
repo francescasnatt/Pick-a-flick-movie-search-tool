@@ -38,6 +38,10 @@ including cast, running time, director and rating.
 
 ![image](https://user-images.githubusercontent.com/86853558/213463551-d372c397-b025-483d-8ddd-3374f2ce8df6.png)
 
+## URL to published web application
+
+https://francescasnatt.github.io/Pick-a-flick-movie-search-tool/
+
 ## CREDITS
 
 * Leigh
