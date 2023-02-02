@@ -8,6 +8,12 @@ function movieArrayObj(searchTerm, date, results) {
 
 };
 
+// add function for modal popup, to be triggered when error occurs
+
+function errorModal(){
+$('#errorModal').modal('show');
+}
+
 //variables
 
 const APIkeyTMDB = '4ea43f6025357b9622135c80346e095e';
@@ -85,7 +91,8 @@ function movieSearch(movie){
 
     //give error alert if film not found
 
-    alert(error.message);
+    // alert(error.message);
+    errorModal();
     
 });
 
